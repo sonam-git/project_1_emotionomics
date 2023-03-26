@@ -1,0 +1,132 @@
+
+body{
+    width: 100%;
+    margin: 0;
+  }
+  
+  /* h2 styling */
+  h2{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  /* heading div with h1 */
+  .header{
+    margin-top: 20px;
+    text-align: center;
+  }
+  /* hero image styling */
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/coin.avif");
+    width: 100vw;
+    height: 100vh;
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin:auto;
+  }
+  /* styling for button */
+  .button{
+    background-color: rgb(35, 137, 227);
+      padding:5px;
+      color: white;
+      border: 2px solid white;
+      border-radius: 15px;
+      width:200px;
+  }
+  .button:hover{
+      background-color:white;
+      color:rgb(35, 137, 227);
+      border: 2px solid rgb(35, 137, 227);
+  }
+  /* display the coin change/button for giphy and user saved data */
+  .box{
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-evenly;
+    gap:30px;
+    flex-wrap: wrap;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    font-weight:bold ;  
+    box-shadow: 10px 5px 5px rgb(33, 30, 30);
+  
+  }
+  img{
+      padding-left:"5px";
+      border-radius: 15px!important;
+  }
+  
+  /* div to hold the button and select option */
+  #userInterface{
+    display:flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    gap:30px;
+    flex-wrap: wrap;
+    flex-wrap: wrap; 
+    padding-top:50px;
+  }
+  /* styling for the giphy display */
+  .giphy{
+    display:flex;
+    justify-content: space-around;
+  }
+  .giphyImage{
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px rgb(33, 30, 30);
+    margin-top: 20px;
+    padding: 10px;
+  }
+  /* set display box none before click event happened */
+   .hideDiv{
+    display:none
+   }
+  /* styling for the heading words div */
+  .word {
+      color: white;
+      font: 100 normal 2.0em 'tahoma';
+      text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+      font-family: 'Courier New', Courier, monospace;
+      height: 80px;
+    }
+    .dropdown{
+      margin-top: 20px;
+    }
+    /* div#top.navbar-menu{
+      background-color: rgb(6, 77, 79);
+    }
+    a.navbar-item{
+      color: white;
+      font-weight: bold;
+    } */
+    div.hero-inner{
+      padding-top: 50px;
+    }
+  
+    .footerSection {
+      height:auto; 
+      background-color:#F7C201;
+       text-align: center;
+       font-size: 18px;
+   }
+  
+   /* MEDIA QUERIES */
+    @media (max-width: 475px) {
+      .word {
+        text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+      font-family: 'Courier New', Courier, monospace;
+        font: 100 normal 1em 'tahoma';
+        height: 40px;
+        margin-bottom:20px;
+      }
+      #userInterface{
+        padding-top: 20px;;
+      }
+      .modal-card{
+        width:400px;
+      }
+    }
