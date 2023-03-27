@@ -1,3 +1,4 @@
+/* body styling */
 body {
   width: 100%;
   margin: 0;
@@ -42,9 +43,8 @@ h2 {
   border: 2px solid rgb(35, 137, 227);
 }
 
-
-.button.is-primary:hover{
-  color:#00d1b2;
+.button.is-primary:hover {
+  color: #00d1b2;
   background-color: white;
   border: 2px solid #00d1b2;
 }
@@ -71,7 +71,7 @@ img {
 
 /* div to hold the button and select option */
 #userInterface {
-  margin-top:100px;
+  margin-top: 100px;
   display: flex;
   justify-content: space-evenly;
   justify-items: center;
@@ -91,7 +91,7 @@ img {
   margin-top: 20px;
   padding: 10px;
   border: 2px black solid;
-  height : 307px;
+  height: 307px;
   width: 524px;
 }
 /* set display box none before click event happened */
@@ -106,12 +106,23 @@ img {
   font-family: "Courier New", Courier, monospace;
   height: 80px;
 }
-p{
-  color:black;
-}
-a.navbar-item, .navbar-link{
-  color:black;
+/* styling for p elements */
+p {
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  padding: 10px;
   font-weight: bold;
+}
+/* make nav bar item and link bold */
+a.navbar-item,
+.navbar-link {
+  color: black;
+  font-weight: bold;
+}
+a.navbar-item:hover, a.navbar-link:hover{
+ text-decoration: underline 4px;
+ color:#00d1b2;
+ text-underline-offset: 5px;
 }
 
 /* padding for inner div of hero div */
@@ -121,14 +132,19 @@ div.hero-inner {
 /* styling for footer section */
 .footerSection {
   height: auto;
-  color:white;
+  color: white;
   background-color: #352b07;
   text-align: center;
   font-size: 18px;
   padding: 5px;
 }
-.navbar-menu{
+/* push the menu to thee end */
+.navbar-menu {
   justify-content: flex-end;
+}
+/* over write the modal background color  */
+.modal-card-head {
+  background-color: #00d1b2;
 }
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
@@ -145,27 +161,25 @@ div.hero-inner {
     padding-top: 20px;
   }
   .modal-card {
-    padding:40px;
+    padding: 40px;
   }
-  div.navbar-brand{
-    background-color:  #00d1b2;
+  div.navbar-brand {
+    background-color: #00d1b2;
   }
-  img{
-    height: 50px;
+  img {
     width: 150px;
     box-shadow: 5px 5px 3px rgb(87, 93, 93);
   }
-  #userInterface{
+  #userInterface {
     margin-top: 0;
   }
   .giphyImage {
     padding: 10px;
-    height : 210px;
+    height: 210px;
     width: 370px;
   }
-  h1.word{
+  h1.word {
     padding-left: 10px;
     padding-right: 10px;
   }
 }
-

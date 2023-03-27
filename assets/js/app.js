@@ -1,9 +1,10 @@
 // //variable
 let APIKEY = "2llCfwgKW4oQEdJcS9y7VtaoHJFYb8pG";
-outEl = document.getElementById("out");
+let outEl = document.getElementById("out");
 let selectEl = document.getElementById("coinsDropDown");
 let coinEl = document.getElementById("coinChange");
 
+// Api call for the coin information
 var options = {
   method: "GET",
   headers: {
@@ -20,7 +21,7 @@ fetch(
     return response.json();
   })
   .then((objectData) => {
-    // console.log(objectData.data.coins);
+    console.log(objectData.data.coins);
     getData(objectData.data.coins);
   });
 
@@ -34,7 +35,6 @@ function getData(arrayList) {
     let optionText = document.createTextNode(arrayList[i].name);
     option.appendChild(optionText);
     selectEl.appendChild(option);
-    
   }
 }
 
@@ -44,57 +44,59 @@ if (selectEl) {
     console.log("option selected");
     event.preventDefault();
     let coinChange = event.target.value;
-    coinEl.setAttribute('class','box');
-    outEl.innerHTML=" "
+    coinEl.setAttribute("class", "box");
+    outEl.innerHTML = " ";
 
     console.log(coinChange);
 
     if (coinChange > 1) {
-      coinEl.innerHTML = ` <h2>Your coin change is ${coinChange} now. Get Your Giphy</h2>`;
+      coinEl.innerHTML = ` <h2>Your coin change is <span  class="tag is-success">${coinChange}</span> now. Get Your Giphy</h2>`;
       console.log(" change is +");
       happyButton();
-      
-     
     } else {
-      coinEl.innerHTML = `<h2>Your coin change is ${coinChange} now. Get Your Giphy</h2>`;
+      coinEl.innerHTML = `<h2>Your coin change is <span class="tag is-danger"> ${coinChange}</span> now. Get Your Giphy</h2>`;
       console.log("Change is - ");
       sadButton();
     }
-    saveData()
+    saveData();
   }
 }
-
 
 // function to save user data
-function saveData () {
+function saveData() {
   // get data from select option
-  var new_data = ' ' + document.getElementById('coinsDropDown').value;
+  var new_data = " " + document.getElementById("coinsDropDown").value;
   // if there is nothing saved at the start then save an empty array
-  if(localStorage.getItem('Price_change')== null){
-    localStorage.setItem('Price_change', '[]');
+  if (localStorage.getItem("Price_change") == null) {
+    localStorage.setItem("Price_change", "[]");
   }
   // get old data and push it to the new data
-  var old_data = JSON.parse(localStorage.getItem('Price_change'));
+  var old_data = JSON.parse(localStorage.getItem("Price_change"));
   old_data.push(new_data);
   // save the old and new data to local storage
-  localStorage.setItem('Price_change',JSON.stringify(old_data));
+  localStorage.setItem("Price_change", JSON.stringify(old_data));
 }
 // function to view data
-function viewData(){
-  if(localStorage.getItem('Price_change') !== null){
-   document.getElementById('coinChange').innerHTML = ` <h2>Your Saved Coin Change History From The Local Storage :</h2> ` + JSON.parse(localStorage.getItem('Price_change'));
-   coinEl.setAttribute('class','box');
+function viewData() {
+  if (localStorage.getItem("Price_change") !== null) {
+    document.getElementById("coinChange").innerHTML =
+      ` <h2>Your Saved Coin Change History From The Local Storage : </h2> ` +
+      JSON.parse(localStorage.getItem("Price_change"));
+    coinEl.setAttribute("class", "box");
   }
 }
 // function to clear all stored user data in the local s
-function clearData(){
+function clearData() {
   localStorage.clear();
-  coinEl.innerHTML = " "
-  coinEl.setAttribute('class','hideDiv');
+  coinEl.innerHTML = " ";
+  coinEl.setAttribute("class", "hideDiv");
 }
-
-
-
+// math function to display random giphy image
+function createRandomNumber(max) {
+  let num = Math.random() * max;
+  num = Math.floor(num);
+  return num;
+}
 // button function to display happy giphy
 function happyButton() {
   let buttonEl = document.createElement("BUTTON");
@@ -104,15 +106,18 @@ function happyButton() {
   coinEl.appendChild(buttonEl);
   buttonEl.addEventListener("click", (event) => {
     event.preventDefault();
-
-    let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=1&q=happy`;
+    // api call for the happy giphy
+    const offset = createRandomNumber(12);
+    console.log(offset);
+    let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=1&q=happy&offset=${offset}`;
+    // added "offset" parameter to display random giphy
     console.log(url);
     fetch(url)
       .then((response) => response.json())
       .then((content) => {
         console.log(content.data[0]);
         let imgEl = document.createElement("img");
-        imgEl.setAttribute('class','giphyImage')
+        imgEl.setAttribute("class", "giphyImage");
         let figEl = document.createElement("figure");
         let fcEl = document.createElement("figcaption");
         imgEl.src = content.data[0].images.downsized.url;
@@ -121,40 +126,32 @@ function happyButton() {
         figEl.appendChild(imgEl);
         figEl.appendChild(fcEl);
         outEl.appendChild(figEl);
-        
       });
     outEl.textContent = " ";
     coinEl.textContent = " ";
-    coinEl.setAttribute('class','hideDiv');
-  
+    coinEl.setAttribute("class", "hideDiv");
   });
 }
 
 // button function to display sad giphy
 function sadButton() {
   let buttonEl = document.createElement("BUTTON");
-  buttonEl.className = "button is-info is-outlined";
+  buttonEl.className = "button is-danger is-outlined";
   let text = document.createTextNode("Get your Giphy..");
   buttonEl.appendChild(text);
   coinEl.appendChild(buttonEl);
   buttonEl.addEventListener("click", (event) => {
     event.preventDefault();
-
-    let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=1&q=sad`;
+    // api call for the sad giphy
+    const offset = createRandomNumber(12);
+    console.log(offset);
+    let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=1&q=sad&offset=${offset}`;
     console.log(url);
     fetch(url)
       .then((response) => response.json())
       .then((content) => {
-        // console.log(content.data[0].images);
-        // const newArray = content.data[0].images
-        // const anotherArray = Object.values(newArray)
-        // const moreArray = anotherArray[0].url;
-        // console.log(moreArray)
-        // console.log(anotherArray)
-        // displayGiphy(anotherArray)
-        
         let imgEl = document.createElement("img");
-        imgEl.setAttribute('class','giphyImage')
+        imgEl.setAttribute("class", "giphyImage");
         let figEl = document.createElement("figure");
         let fcEl = document.createElement("figcaption");
         imgEl.src = content.data[0].images.downsized.url;
@@ -166,24 +163,18 @@ function sadButton() {
       });
     outEl.textContent = " ";
     coinEl.textContent = " ";
-    coinEl.setAttribute('class','hideDiv');
+    coinEl.setAttribute("class", "hideDiv");
   });
 }
 
-// function displayGiphy(arrayImg) {
-//   for (let i = 0; i < arrayImg.length; i++) {
-//     let option = document.createElement("img");
-//     option.setAttribute("src", arrayImg[i].url);
-//     console.log(option)
-//    outEl.appendChild(option);
-  
-//   }
-// }
-
-function clearGiphy(){
+// function to close the display
+function clearGiphy() {
   outEl.innerHTML = " ";
   coinEl.textContent = " ";
-  coinEl.setAttribute('class','hideDiv');
+  coinEl.setAttribute("class", "hideDiv");
+  // option.textContent = " ";
+  //selectEl.value = " ";
+  document.getElementById("coinsDropDown").selectedIndex = 0;
 }
 // choose the coin event listener
 selectEl.addEventListener("change", selectCoin);
