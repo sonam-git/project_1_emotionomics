@@ -1,52 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-      Coin & Giphy
-    </title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emotionomics</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
   </head>
-  
+
   <body>
     <header>
       <!-- navbar -->
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-          <a class="navbar-item" href="https://bulma.io">
-            <img src="./assets/images/logo.JPG" width="112" height="28">
+          <a class="navbar-item" href="#">
+            <img class="logo" src="./assets/images/projectlogo.jpg" />
           </a>
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-          data-target="navbarBasicExample">
-            <span aria-hidden="true">
-            </span>
-            <span aria-hidden="true">
-            </span>
-            <span aria-hidden="true">
-            </span>
+          <a
+            role="button"
+            class="navbar-burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+          >
+            <span aria-hidden="true"> </span>
+            <span aria-hidden="true"> </span>
+            <span aria-hidden="true"> </span>
           </a>
         </div>
         <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item">
-              Home
-            </a>
+          <div class="navbar-end">
+            <a class="navbar-item"> Home </a>
             <a class="navbar-item js-modal-trigger" data-target="about">
               About us
             </a>
             <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                Our Team
-              </a>
+              <a class="navbar-link"> Our Team </a>
               <div class="navbar-dropdown">
-                <a class="navbar-item js-modal-trigger" data-target="team-members">
+                <a
+                  class="navbar-item js-modal-trigger"
+                  data-target="team-members"
+                >
                   Team Members
                 </a>
-                <hr class="navbar-divider">
+                <hr class="navbar-divider" />
                 <a class="navbar-item js-modal-trigger" data-target="contact">
                   Contact us
                 </a>
@@ -56,10 +58,11 @@
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <a class="button is-primary js-modal-trigger " data-target="sign">
-                  <strong>
-                    Sign up
-                  </strong>
+                <a
+                  class="button is-primary js-modal-trigger"
+                  data-target="sign"
+                >
+                  <strong> Sign up </strong>
                 </a>
               </div>
             </div>
@@ -67,111 +70,112 @@
         </div>
       </nav>
     </header>
+
     <!--Hero image section -->
     <section class="hero-image">
       <div class="hero-inner">
         <!-- text animation div -->
         <div class="header">
-          <h1 class="word">
-          </h1>
+          <h1 class="word"></h1>
         </div>
         <!-- display Giphy after user click the button -->
-        <div class="giphy" id="out">
-        </div>
+        <div class="giphy" id="out"></div>
         <!-- show the coin change message & display button here -->
-        <div id="coinChange" class="hideDiv">
-        </div>
+        <div id="coinChange" class="hideDiv"></div>
       </div>
       <!-- div to hold the user interaction elements -->
       <div id="userInterface">
-        <button class="button " onclick="viewData();">
-          View Value
-        </button>
-        <button class="button " onclick="clearData();">
-          Clear All
-        </button>
-        <button class="button " onclick="clearGiphy();">
-          Close
-        </button>
+        <button class="button" onclick="viewData();">View Value</button>
+        <button class="button" onclick="clearData();">Clear All</button>
+        <button class="button" onclick="clearGiphy();">Close</button>
         <div class="select is-info">
           <!-- user input as select an option -->
           <select id="coinsDropDown">
-            <option id="userOption">
-              Select Your Coin
-            </option>
+            <option id="userOption">Select Your Coin</option>
           </select>
         </div>
       </div>
     </section>
+
     <!-- About us modal -->
     <div class="modal" id="about">
-      <div class="modal-background">
-      </div>
+      <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title is-warning">
-            About us
-          </p>
-          <button class="delete" aria-label="close">
-          </button>
+          <p class="modal-card-title is-warning">About us</p>
+          <button class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
           <div class="content">
-            <h2>
-              Coin & Giphy
-            </h2>
+            <h3>Welcome to Emotionomics!</h3>
             <p>
-              This project is about Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Rem voluptatibus blanditiis neque? Cum modi consectetur, ab eveniet
-              placeat nam quasi porro quisquam nostrum error quia necessitatibus, voluptatibus
-              iste tempora iusto! This project is about Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Rem voluptatibus blanditiis neque? Cum modi consectetur,
-              ab eveniet placeat nam quasi porro quisquam nostrum error quia necessitatibus,
-              voluptatibus iste tempora iusto!This project is about Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. Rem voluptatibus blanditiis neque?
-              Cum modi consectetur, ab eveniet placeat nam quasi porro quisquam nostrum
-              error quia necessitatibus, voluptatibus iste tempora iusto!
+              Our goal is to allow the user to track the %change of a selected
+              coin, and accordingly deliver a GIF to help guide how you should
+              be feeling. By tracking the live movement of the value of your
+              selected coin, we calculate either your loss or your gain and
+              randomly select the appropriate GIF.
             </p>
+            <h3>How to use</h3>
             <p>
-              This project is about Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Rem voluptatibus blanditiis neque? Cum modi consectetur, ab eveniet
-              placeat nam quasi porro quisquam nostrum error quia necessitatibus, voluptatibus
-              iste tempora iusto! This project is about Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Rem voluptatibus blanditiis neque? Cum modi consectetur,
-              ab eveniet placeat nam quasi porro quisquam nostrum error quia necessitatibus,
-              voluptatibus iste tempora iusto!This project is about Lorem ipsum dolor
-              sit amet consectetur adipisicing elit. Rem voluptatibus blanditiis neque?
-              Cum modi consectetur, ab eveniet placeat nam quasi porro quisquam nostrum
-              error quia necessitatibus, voluptatibus iste tempora iusto!
+              Simply access our website through this link: ___ Once on the
+              website, just open the drop down menu to find the list of coins
+              and select the coin you would like to track. Once a coin is
+              selected, the user should see the %change of the coin and whether
+              they should be happy or sad!
             </p>
           </div>
         </section>
         <footer class="modal-card-foot">
-          <button class="button is-secondary">
-            Back To Home
-          </button>
+          <button class="button is-secondary">Back To Home</button>
         </footer>
       </div>
     </div>
     <!--The Contact us team Modal-->
     <div class="modal" id="contact">
-      <div class="modal-background">
-      </div>
+      <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title is-warning">
-            Contact us
-          </p>
-          <button class="delete" aria-label="close">
-          </button>
+          <p class="modal-card-title is-warning">Contact us</p>
+          <button class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
           <div class="content">
-            <h4>
-              Sonam J Sherpa
-            </h4>
+            <h4>Sonam J Sherpa</h4>
             <p>
-              <a href="https://www.linkedin.com/in/sonam-j-sherpa-0284b4b8/" target="_blank">
+              <button class="button is-info is-inverted">
+                <a
+                  href="https://www.linkedin.com/in/sonam-j-sherpa-0284b4b8/"
+                  target="_blank"
+                >
+                  Linkedin
+                </a>
+              </button>
+            </p>
+            <p>
+              <button class="button is-info is-inverted">
+                <a href=" https://sonam-git.github.io/professional-portfolio/">
+                  Portfolio
+                </a>
+              </button>
+            </p>
+            <h4>Dandar Ganbold</h4>
+            <p>
+              <a
+                href="https://www.linkedin.com/in/dandar-ganbold-b53b8426b/"
+                target="_blank"
+              >
+                Linkedin
+              </a>
+            </p>
+            <p>
+              <a href=" https://github.com/Daganbold"> Portfolio </a>
+            </p>
+            <h4>Walter Craigie</h4>
+            <p>
+              <a
+                href="https://www.linkedin.com/in/sonam-j-sherpa-0284b4b8/"
+                target="_blank"
+              >
                 Linkedin
               </a>
             </p>
@@ -180,11 +184,12 @@
                 Portfolio
               </a>
             </p>
-            <h4>
-              Dandar Ganbold
-            </h4>
+            <h4>Yung in Shin</h4>
             <p>
-              <a href="https://www.linkedin.com/in/sonam-j-sherpa-0284b4b8/" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/sonam-j-sherpa-0284b4b8/"
+                target="_blank"
+              >
                 Linkedin
               </a>
             </p>
@@ -193,37 +198,12 @@
                 Portfolio
               </a>
             </p>
-            <h4>
-              Walter Craigie
-            </h4>
+            <h4>Kaleo Dutta-Allen</h4>
             <p>
-              <a href="https://www.linkedin.com/in/sonam-j-sherpa-0284b4b8/" target="_blank">
-                Linkedin
-              </a>
-            </p>
-            <p>
-              <a href=" https://sonam-git.github.io/professional-portfolio/">
-                Portfolio
-              </a>
-            </p>
-            <h4>
-              Yung in Shin
-            </h4>
-            <p>
-              <a href="https://www.linkedin.com/in/sonam-j-sherpa-0284b4b8/" target="_blank">
-                Linkedin
-              </a>
-            </p>
-            <p>
-              <a href=" https://sonam-git.github.io/professional-portfolio/">
-                Portfolio
-              </a>
-            </p>
-            <h4>
-              Kaleo Dutta-Allen
-            </h4>
-            <p>
-              <a href="https://www.linkedin.com/in/sonam-j-sherpa-0284b4b8/" target="_blank">
+              <a
+                href="https://www.linkedin.com/in/sonam-j-sherpa-0284b4b8/"
+                target="_blank"
+              >
                 Linkedin
               </a>
             </p>
@@ -235,121 +215,137 @@
           </div>
         </section>
         <footer class="modal-card-foot">
-          <button class="button is-secondary">
-            Back To Home
-          </button>
+          <button class="button is-secondary">Back To Home</button>
         </footer>
       </div>
     </div>
     <!--The Team Modal-->
     <div class="modal" id="team-members">
-      <div class="modal-background">
-      </div>
+      <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title is-warning">
-            Our Team Members
-          </p>
-          <button class="delete" aria-label="close">
-          </button>
+          <p class="modal-card-title is-warning">Our Team Members</p>
+          <button class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
-          <h2 class="has-text-centered">
-            The Developers
-          </h2>
-          <hr>
+          <h2 class="has-text-centered">The Developers</h2>
+          <hr />
           <div class="content">
-            <h4>
-              Sonam J Sherpa
-            </h4>
-            <img src="assets/images/myphoto.jpg " width="200" src="" height="200"
-            alt="my photo" id="ember221" class="ember-view profile-photo-edit__preview">
+            <h4>Sonam J Sherpa</h4>
+            <img
+              src="assets/images/myphoto.jpg "
+              width="200"
+              src=""
+              height="200"
+              alt="my photo"
+              id="ember221"
+              class="ember-view profile-photo-edit__preview"
+            />
             <p>
-              I am originally from Nepal, the country of Mt. Everest..... Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Qui praesentium, earum ducimus
-              accusamus exercitationem vero, minus pariatur deserunt corporis enim architecto
-              sint laboriosam atque accusantium eveniet. Ratione temporibus dolorum cumque.
+              I am originally from Nepal, the country of Mt. Everest..... Lorem
+              ipsum dolor sit amet consectetur adipisicing elit. Qui
+              praesentium, earum ducimus accusamus exercitationem vero, minus
+              pariatur deserunt corporis enim architecto sint laboriosam atque
+              accusantium eveniet. Ratione temporibus dolorum cumque.
             </p>
-            <h4>
-              Dandar Ganbold
-            </h4>
-            <img src="assets/images/IMG_8510.jpg" width="200" src="" height="200"
-            alt="my photo" id="ember221" class="ember-view profile-photo-edit__preview">
+            <h4>Dandar Ganbold</h4>
+            <img
+              src="assets/images/IMG_8510.jpg"
+              width="200"
+              src=""
+              height="200"
+              alt="my photo"
+              id="ember221"
+              class="ember-view profile-photo-edit__preview"
+            />
             <p>
-              I am originally from Nepal, the country of Mt. Everest..... Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Qui praesentium, earum ducimus
-              accusamus exercitationem vero, minus pariatur deserunt corporis enim architecto
-              sint laboriosam atque accusantium eveniet. Ratione temporibus dolorum cumque.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+              praesentium, earum ducimus accusamus exercitationem vero, minus
+              pariatur deserunt corporis enim architecto sint laboriosam atque
+              accusantium eveniet. Ratione temporibus dolorum cumque.
             </p>
-            <h4>
-              Walter Craigie
-            </h4>
-            <img src="assets/images/IMG_8511.jpg " width="200" src="" height="200"
-            alt="my photo" id="ember221" class="ember-view profile-photo-edit__preview">
+            <h4>Walter Craigie</h4>
+            <img
+              src="assets/images/IMG_8511.jpg "
+              width="200"
+              src=""
+              height="200"
+              alt="my photo"
+              id="ember221"
+              class="ember-view profile-photo-edit__preview"
+            />
             <p>
-              I am originally from Nepal, the country of Mt. Everest..... Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Qui praesentium, earum ducimus
-              accusamus exercitationem vero, minus pariatur deserunt corporis enim architecto
-              sint laboriosam atque accusantium eveniet. Ratione temporibus dolorum cumque.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
+              praesentium, dolor sit amet consectetur adipisicing elit. Qui
+              praesentium, earum ducimus accusamus exercitationem vero, minus
+              pariatur deserunt corporis enim architecto sint laboriosam atque
+              accusantium eveniet. Ratione temporibus dolorum cumque.
             </p>
-            <h4>
-              Yung in Shin
-            </h4>
-            <img src=" " width="200" src="" height="200" alt="my photo" id="ember221"
-            class="ember-view profile-photo-edit__preview">
+            <h4>Yung in Shin</h4>
+            <img
+              src=""
+              width="200"
+              src=""
+              height="200"
+              alt="my photo"
+              id="ember221"
+              class="ember-view profile-photo-edit__preview"
+            />
             <p>
-              I am originally from Nepal, the country of Mt. Everest..... Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Qui praesentium, earum ducimus
-              accusamus exercitationem vero, minus pariatur deserunt corporis enim architecto
-              sint laboriosam atque accusantium eveniet. Ratione temporibus dolorum cumque.
+              dolor sit amet consectetur adipisicing elit. Qui praesentium,
+              earum ducimus dolor sit amet consectetur adipisicing elit. Qui
+              praesentium, earum ducimus accusamus exercitationem vero, minus
+              pariatur deserunt corporis enim architecto sint laboriosam atque
+              accusantium eveniet. Ratione temporibus dolorum cumque.
             </p>
-            <h4>
-              Kaleo Dutta-Allen
-            </h4>
-            <img src=" " width="200" src="" height="200" alt="my photo" id="ember221"
-            class="ember-view profile-photo-edit__preview">
+            <h4>Kaleo Dutta-Allen</h4>
+            <img
+              src="assets/images/dutta.jpeg "
+              width="200"
+              src=""
+              height="200"
+              alt="my photo"
+              id="ember221"
+              class="ember-view profile-photo-edit__preview"
+            />
             <p>
-              I am originally from Nepal, the country of Mt. Everest..... Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Qui praesentium, earum ducimus
-              accusamus exercitationem vero, minus pariatur deserunt corporis enim architecto
-              sint laboriosam atque accusantium eveniet. Ratione temporibus dolorum cumque.
+              dolor sit amet consectetur adipisicing elit. Qui praesentium,
+              earum ducimus dolor sit amet consectetur adipisicing elit. Qui
+              praesentium, earum ducimus accusamus exercitationem vero, minus
+              pariatur deserunt corporis enim architecto sint laboriosam atque
+              accusantium eveniet. Ratione temporibus dolorum cumque.
             </p>
           </div>
         </section>
         <footer class="modal-card-foot">
-          <button class="button is-secondary">
-            Back To Home
-          </button>
+          <button class="button is-secondary">Back To Home</button>
         </footer>
       </div>
     </div>
     <!--The Sign Up Modal-->
     <div class="modal" id="sign">
-      <div class="modal-background">
-      </div>
+      <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title is-warning">
-            Sign Up
-          </p>
-          <button class="delete" aria-label="close">
-          </button>
+          <p class="modal-card-title is-warning">Sign Up</p>
+          <button class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
           <div class="content">
             <div class="field">
-              <p>
-                Sign up for the future notification about the coinChange.
-              </p>
+              <p>Sign up for the future notification about the coinchange.</p>
               <p class="control has-icons-left has-icons-right" id="textHere">
-                <input class="input" id="email" type="email" placeholder="Email">
+                <input
+                  class="input"
+                  id="email"
+                  type="email"
+                  placeholder="Email"
+                />
                 <span class="icon is-small is-left">
-                  <i class="fas fa-envelope">
-                  </i>
+                  <i class="fas fa-envelope"> </i>
                 </span>
                 <span class="icon is-small is-right">
-                  <i class="fas fa-check">
-                  </i>
+                  <i class="fas fa-check"> </i>
                 </span>
               </p>
             </div>
@@ -359,8 +355,7 @@
                   Sign up
                 </button>
               </p>
-              <p class="alreadyRegistered">
-              </p>
+              <p class="alreadyRegistered"></p>
             </div>
           </div>
         </section>
@@ -368,21 +363,16 @@
     </div>
     <!--Footer-->
     <footer class="footerSection">
-      <h1>
-        All Rights Reserved Team Pro-3 : 2023
-      </h1>
+      <h1>&copy; All Rights Reserved Team Pro-3 : 2023</h1>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-    crossorigin="anonymous">
-    </script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js">
-    </script>
-    <script src='./assets/js/navbar.js'>
-    </script>
-    <script src='./assets/js/modal.js'>
-    </script>
-    <script src='./assets/js/app.js'>
-    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="./assets/js/navbar.js"></script>
+    <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/app.js"></script>
   </body>
-
 </html>

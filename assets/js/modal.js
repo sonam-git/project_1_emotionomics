@@ -1,15 +1,14 @@
-
-var sign_email = document.getElementById("email");
+var emailInput = document.getElementById("email");
 var textHere = document.getElementById("textHere");
 var sign_button = document.getElementById("signBtn");
-var providedAlready = document.getElementsByClassName("alreadyRegistered");
+var preRegisterEl = document.getElementsByClassName("alreadyRegistered");
 //local storage created in array to capture email addresses
 var emailStore = [];
 
 function renderSearch() {
-  textHere.innerHTML = "";
+  textHere.innerHTML = " ";
   for (var i = 0; i < emailStore.length; i++) {
-     emailStore = emailStore[i];
+    emailStore = emailStore[i];
   }
 }
 
@@ -31,15 +30,15 @@ function storeEmail() {
 var handleFormSubmit = function (event) {
   event.preventDefault();
 
-  var emailName = sign_email.value.trim();
+  var emailName = emailInput.value.trim();
   if (!emailStore.includes(emailName)) {
     emailStore.push(emailName);
-    providedAlready[0].textContent =
-      "Thank you for providing your email address.";
+    preRegisterEl[0].textContent = "Thank you for signing up..!";
   } else if (emailName !== null) {
-    providedAlready[0].textContent = `Sorry we were not able to register this please provide a new one.`;
+    preRegisterEl[0].textContent = `Sorry we are not able to register this email. Please try with the new one`;
   }
   storeEmail();
+  emailInput.value = " ";
 };
 
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -81,8 +80,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     $close.addEventListener("click", () => {
       closeModal($target);
-      sign_email.value = "";
-      providedAlready[0].textContent = "";
+      emailInput.value = "";
+      preRegisterEl[0].textContent = "";
     });
   });
 });
