@@ -21,7 +21,7 @@ fetch(
     return response.json();
   })
   .then((objectData) => {
-    console.log(objectData.data.coins);
+    // console.log(objectData.data.coins);
     getData(objectData.data.coins);
   });
 
@@ -50,11 +50,11 @@ if (selectEl) {
     console.log(coinChange);
 
     if (coinChange > 1) {
-      coinEl.innerHTML = ` <h2>Your coin change is <span  class="tag is-success">${coinChange}</span> now. Get Your Giphy</h2>`;
+      coinEl.innerHTML = ` <h2>Your coin change is <span  class="tag is-success">${coinChange}</span> % now. Get Your Giphy</h2>`;
       console.log(" change is +");
       happyButton();
     } else {
-      coinEl.innerHTML = `<h2>Your coin change is <span class="tag is-danger"> ${coinChange}</span> now. Get Your Giphy</h2>`;
+      coinEl.innerHTML = `<h2>Your coin change is  <span class="tag is-danger"> ${coinChange}</span> % now. Get Your Giphy</h2>`;
       console.log("Change is - ");
       sadButton();
     }
@@ -80,7 +80,7 @@ function saveData() {
 function viewData() {
   if (localStorage.getItem("Price_change") !== null) {
     document.getElementById("coinChange").innerHTML =
-      ` <h2>Your Saved Coin Change History From The Local Storage : </h2> ` +
+      ` <h2>Your Saved Coin Change % History From The Local Storage : </h2> ` +
       JSON.parse(localStorage.getItem("Price_change"));
     coinEl.setAttribute("class", "box");
   }

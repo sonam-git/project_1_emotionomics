@@ -112,6 +112,7 @@ p {
   font-family: "Courier New", Courier, monospace;
   padding: 10px;
   font-weight: bold;
+  text-align: left;
 }
 /* make nav bar item and link bold */
 a.navbar-item,
@@ -119,10 +120,17 @@ a.navbar-item,
   color: black;
   font-weight: bold;
 }
-a.navbar-item:hover, a.navbar-link:hover{
- text-decoration: underline 4px;
- color:#00d1b2;
- text-underline-offset: 5px;
+a.navbar-item:hover,
+a.navbar-link:hover {
+  text-decoration: underline 4px;
+  color: #00d1b2;
+  text-underline-offset: 5px;
+}
+a.navbar-item:active,
+a.navbar-link:active {
+  text-decoration: underline 4px;
+  color: red;
+  text-underline-offset: 5px;
 }
 
 /* padding for inner div of hero div */
@@ -137,6 +145,10 @@ div.hero-inner {
   text-align: center;
   font-size: 18px;
   padding: 5px;
+}
+p.footerText {
+  text-align: center;
+  color: white;
 }
 /* push the menu to thee end */
 .navbar-menu {
@@ -181,5 +193,8 @@ div.hero-inner {
   h1.word {
     padding-left: 10px;
     padding-right: 10px;
+  }
+  img.logo {
+    height: 40px;
   }
 }
