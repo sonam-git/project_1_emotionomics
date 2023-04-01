@@ -1,8 +1,9 @@
 // //variable
 let APIKEY = "2llCfwgKW4oQEdJcS9y7VtaoHJFYb8pG";
 let outEl = document.getElementById("out");
-let selectEl = document.getElementById("coinsDropDown");
-let coinEl = document.getElementById("coinChange");
+let selectEl = document.getElementById("coins-dropdown");
+let coinEl = document.getElementById("coin-change");
+let headEl = document.getElementById("heading-1");
 
 // Api call for the coin information
 var options = {
@@ -30,6 +31,7 @@ function getData(arrayList) {
   for (let i = 0; i < arrayList.length; i++) {
     let option = document.createElement("option");
     option.setAttribute("value", arrayList[i].change);
+
     option.setAttribute("id", arrayList[i].id);
 
     let optionText = document.createTextNode(arrayList[i].name);
@@ -53,10 +55,14 @@ if (selectEl) {
       coinEl.innerHTML = ` <h2>Your coin change is <span  class="tag is-success">${coinChange}</span> % now. Get Your Giphy</h2>`;
       console.log(" change is +");
       happyButton();
+      // hide the div when user interacts
+      headEl.setAttribute("class", "hide-div");
     } else {
       coinEl.innerHTML = `<h2>Your coin change is  <span class="tag is-danger"> ${coinChange}</span> % now. Get Your Giphy</h2>`;
       console.log("Change is - ");
       sadButton();
+      // hide the div when user interacts
+      headEl.setAttribute("class", "hide-div");
     }
     saveData();
   }
@@ -65,7 +71,7 @@ if (selectEl) {
 // function to save user data
 function saveData() {
   // get data from select option
-  var new_data = " " + document.getElementById("coinsDropDown").value;
+  var new_data = " " + document.getElementById("coins-dropdown").value;
   // if there is nothing saved at the start then save an empty array
   if (localStorage.getItem("Price_change") == null) {
     localStorage.setItem("Price_change", "[]");
@@ -79,17 +85,18 @@ function saveData() {
 // function to view data
 function viewData() {
   if (localStorage.getItem("Price_change") !== null) {
-    document.getElementById("coinChange").innerHTML =
+    document.getElementById("coin-change").innerHTML =
       ` <h2>Your Saved Coin Change % History From The Local Storage : </h2> ` +
       JSON.parse(localStorage.getItem("Price_change"));
     coinEl.setAttribute("class", "box");
+    headEl.setAttribute("class", "hide-div");
   }
 }
 // function to clear all stored user data in the local s
 function clearData() {
   localStorage.clear();
   coinEl.innerHTML = " ";
-  coinEl.setAttribute("class", "hideDiv");
+  coinEl.setAttribute("class", "hide-div");
 }
 // math function to display random giphy image
 function createRandomNumber(max) {
@@ -117,9 +124,10 @@ function happyButton() {
       .then((content) => {
         console.log(content.data[0]);
         let imgEl = document.createElement("img");
-        imgEl.setAttribute("class", "giphyImage");
+        imgEl.setAttribute("class", "giphy-image");
         let figEl = document.createElement("figure");
         let fcEl = document.createElement("figcaption");
+        fcEl.setAttribute("class", "figcaption");
         imgEl.src = content.data[0].images.downsized.url;
         imgEl.alt = content.data[0].title;
         fcEl.textContent = content.data[0].title;
@@ -129,7 +137,7 @@ function happyButton() {
       });
     outEl.textContent = " ";
     coinEl.textContent = " ";
-    coinEl.setAttribute("class", "hideDiv");
+    coinEl.setAttribute("class", "hide-div");
   });
 }
 
@@ -151,9 +159,10 @@ function sadButton() {
       .then((response) => response.json())
       .then((content) => {
         let imgEl = document.createElement("img");
-        imgEl.setAttribute("class", "giphyImage");
+        imgEl.setAttribute("class", "giphy-image");
         let figEl = document.createElement("figure");
         let fcEl = document.createElement("figcaption");
+        fcEl.setAttribute("class", "figcaption");
         imgEl.src = content.data[0].images.downsized.url;
         imgEl.alt = content.data[0].title;
         fcEl.textContent = content.data[0].title;
@@ -163,7 +172,7 @@ function sadButton() {
       });
     outEl.textContent = " ";
     coinEl.textContent = " ";
-    coinEl.setAttribute("class", "hideDiv");
+    coinEl.setAttribute("class", "hide-div");
   });
 }
 
@@ -171,10 +180,12 @@ function sadButton() {
 function clearGiphy() {
   outEl.innerHTML = " ";
   coinEl.textContent = " ";
-  coinEl.setAttribute("class", "hideDiv");
+  coinEl.setAttribute("class", "hide-div");
   // option.textContent = " ";
   //selectEl.value = " ";
-  document.getElementById("coinsDropDown").selectedIndex = 0;
+  document.getElementById("coins-dropdown").selectedIndex = 0;
+  // render back headEl when click close button
+  headEl.setAttribute("class", "instruction");
 }
 // choose the coin event listener
 selectEl.addEventListener("change", selectCoin);
