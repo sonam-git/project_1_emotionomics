@@ -21,15 +21,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // animation portion of heading
-var words = ["Select Your Coin", "Know The Value Change", "&", "Get Your Giphy.."],
-  part,
-  i = 0,
-  offset = 0,
-  len = words.length,
-  forwards = true,
-  skip_count = 0,
-  skip_delay = 15,
-  speed = 70;
+var words = [
+  "Select Your Coin,",
+  "Know The Value Change,",
+  "And,",
+  "Get Your Giphy..😄",
+];
+
+(i = 0),
+  (offset = 0),
+  (len = words.length),
+  (forwards = true),
+  (skip_count = 0),
+  (skip_delay = 15),
+  (speed = 70);
 var wordflick = function () {
   setInterval(function () {
     if (forwards) {

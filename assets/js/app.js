@@ -31,8 +31,17 @@ function getData(arrayList) {
   for (let i = 0; i < arrayList.length; i++) {
     let option = document.createElement("option");
     option.setAttribute("value", arrayList[i].change);
-
     option.setAttribute("id", arrayList[i].id);
+    // function to sort the coin name alphabetically
+    arrayList.sort(function (a, b) {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      return 0;
+    });
 
     let optionText = document.createTextNode(arrayList[i].name);
     option.appendChild(optionText);

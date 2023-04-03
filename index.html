@@ -17,7 +17,7 @@
          <!-- navbar -->
          <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-               <a class="navbar-item" href="#">
+               <a class="navbar-item"  href="https://github.com/Daganbold/emotionomics-p1" target="_blank">
                <img class="logo" src="./assets/images/projectlogo.jpg" alt="logo of emotionomics" />
                </a>
                <a
@@ -32,19 +32,19 @@
                <span aria-hidden="true"> </span>
                </a>
             </div>
-            <div id="navbarBasicExample" class="navbar-menu">
-               <div class="navbar-end">
-                  <a class="navbar-item " > Home </a>
-                  <a class="navbar-item js-modal-trigger" data-target="about">
+            <div id="navbarBasicExample" class="navbar-menu" id="my-navbar">
+               <div class="navbar-end" >
+                  <a class="navbar-item btn active "  > Home </a>
+                  <a class="navbar-item js-modal-trigger " data-target="about" >
                   About us
                   </a>
                   <a
-                     class="navbar-item js-modal-trigger"
-                     data-target="team-members"
+                     class="navbar-item js-modal-trigger "
+                     data-target="team-members" 
                      >
                   Team Members
                   </a>
-                  <a class="navbar-item js-modal-trigger" data-target="contact">
+                  <a class="navbar-item js-modal-trigger " data-target="contact">
                   Contact us
                   </a>
                </div>
@@ -88,15 +88,15 @@
          <div id="coin-change" class="hide-div"></div>
          <!-- div to hold the user interaction elements -->
          <div id="user-interface">
-            <button class="button" onclick="viewData();">View Value</button>
-            <button class="button" onclick="clearData();">Clear All</button>
-            <button class="button" onclick="clearGiphy();">Close</button>
             <div class="select is-info">
                <!-- user input as select an option -->
                <select id="coins-dropdown">
                   <option id="user-option">Select Your Coin</option>
                </select>
             </div>
+            <button class="button" onclick="viewData();">View Value</button>
+            <button class="button" onclick="clearData();">Clear All</button>
+            <button class="button" onclick="clearGiphy();">Close</button>
          </div>
       </section>
       <!-- About us modal -->
