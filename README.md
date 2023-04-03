@@ -106,27 +106,24 @@ SOFTWARE.
 ## Screenshots
 
 * Desktop view with coin select dropdown.
-![Screenshot 2023-03-30 at 9 58 46 PM](https://user-images.githubusercontent.com/89502092/229027307-ccd9d258-2489-4810-ad0c-16914c037044.png)
+![Screenshot 2023-03-31 at 9 15 50 PM](https://user-images.githubusercontent.com/89502092/229265413-d350692d-e1cc-44c6-992a-b3a2a6c2840d.png)
 
+![Screenshot 2023-03-31 at 9 16 08 PM](https://user-images.githubusercontent.com/89502092/229265416-5f2523a6-20f1-4897-9226-60a72448bfb8.png)
 
 * Desktop view of  GIF being displayed.
-![Screenshot 2023-03-30 at 9 59 18 PM](https://user-images.githubusercontent.com/89502092/229027339-8128d5ef-9b91-4f07-9844-f6bbfc4d478d.png)
-
+![Screenshot 2023-03-31 at 9 16 31 PM](https://user-images.githubusercontent.com/89502092/229265446-44eb7944-57b8-4fba-9256-a36427bb220d.png)
 
 * Mobile view of front page.
 
-![Screenshot 2023-03-30 at 9 53 07 PM](https://user-images.githubusercontent.com/89502092/229027399-defa7d73-d85f-4038-a6d9-e5500c5a97a4.png)
-
-
+![Screenshot 2023-03-31 at 9 17 03 PM](https://user-images.githubusercontent.com/89502092/229265450-c5de1fb7-31f1-4b41-8893-289b4e45de7b.png) 
 * Mobile view with NAV dropdown burger menu open.
 
-![Screenshot 2023-03-30 at 10 02 08 PM](https://user-images.githubusercontent.com/89502092/229027420-f0bf478d-6931-493e-9c4b-2fc0b6f98ebf.png)
+![Screenshot 2023-03-31 at 9 17 21 PM](https://user-images.githubusercontent.com/89502092/229265455-f352e372-f65a-4b54-bb34-8ed43638662f.png)
 
 
 
 # Github URL: 
- https://github.com/sonam-git/project_1-Coin-Giphy
+ https://github.com/Daganbold/emotionomics-p1
 
 # Deployed Live URL: 
-  https://sonam-git.github.io/project_1-Coin-Giphy/
-
+  https://daganbold.github.io/emotionomics-p1/
