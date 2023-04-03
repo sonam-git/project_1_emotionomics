@@ -218,7 +218,7 @@ p.footer-text {
   font-weight: 600;
 }
 /* fade in fade out photo animation div */
-.content {
+.image-div {
   box-shadow: 8px 3px 3px rgb(33, 30, 30);
   border-radius: 15px;
   height: 400px;
@@ -289,13 +289,12 @@ p.footer-text {
   .instruction {
     margin-top: 0 !important;
   }
-  .giphy-image,
-  .content {
+  .giphy-image {
     padding: 10px;
     height: 210px;
     width: 370px;
   }
-  .content {
+  .image-div {
     padding: 10px;
     height: 210px;
     width: 300px;
