@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // animation portion of heading
-var words = ["Select Your Coin, Know The Value Change & Get Your Giphy.."],
+var words = ["Select Your Coin", "Know The Value Change", "&", "Get Your Giphy.."],
   part,
   i = 0,
   offset = 0,
@@ -58,7 +58,7 @@ var wordflick = function () {
         offset--;
       }
     }
-    $(".word").text(part);
+    $(".heading-word").text(part);
   }, speed);
 };
 
