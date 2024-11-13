@@ -126,7 +126,7 @@ SOFTWARE.
 
 
 # Github URL: 
- https://github.com/sonam-git/project_1_emotionomics
+(https://github.com/Daganbold/emotionomics-p1)
 
 # Deployed Live URL: 
   https://sonam-git.github.io/project_1_emotionomics/
